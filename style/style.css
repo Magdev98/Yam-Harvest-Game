@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6e3c5;
+}
+
+dialog {
+  margin: auto;
+  padding: 2 rem;
+}
+
+dialog::backdrop {
+  backdrop-filter: sepia(1) brightness(40%) blur(5px);
+}
+
+.cell {
+  aspect-ratio: 1;
+  background-color: #aa8b56;
+  border: 0.5px solid #f0ebce;
+}
+
+#grid {
+  display: grid;
+  width: 500px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.mushroom {
+  background-color: #bb3b0e;
+}
+
+.yam {
+  background-color: #f0dd92;
+}
+
+.farmer {
+  background-color: #395144;
+}
+
+#timer {
+  font-weight: bold;
+  font-size: 4 rem;
+}
