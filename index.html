@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./js/functionsgame.js"></script>
-    <link rel="stylesheet" href="./style/style.css"/>
+    <link rel="stylesheet" href="./style/style.css" />
     <title>The Yam Harvest Game</title>
-</head>
-<body>
-  <h1>The Yam Harvest Game</h1>
-  
-  <h2>Score: <span id="score">0 pts</span></h2>
-  
-  <button id="start-button">Start Game</button>
-  
-  <div id="timer"></div>
-  
-  <section id="grid"></section>
-  
-  <dialog id="dialog">
-        <p id="message"></p>
-        <button>Restart Game</button>
-  </dialog>
+  </head>
+  <body>
+    <section id="game">
+      <h1>The Yam Harvest Game</h1>
 
-  <section>
-    <p class="rules">
-      Welcome to New Caledonia, a beautiful French archipelago in the South Pacific Ocean! 
-      Its inhabitants are called Caledonians and among them live the Kanak, one of the first peoples, whose culture is based on ancestral traditions such as the harvesting of the yam (tuber) which gave rhythm to the life of the tribes. It mainly symbolizes man and each stage of his culture still gives rise to customary ceremonies (births, weddings, funerals…).
-      Dive into a Kanak tribe and help a farmer (⬅️ ➡️) to harvest as many yams as possible for his tribe. Beware of poisonous mushrooms during your harvest or you will kill our farmer and ruin the crop!
-    </p>
-  </section>
+      <h2>Score: <span id="score">0</span> 🍠</h2>
 
-</body>
+      <button id="start-button">Start Game</button>
+
+      <div id="timer"></div>
+
+      <div id="grid"></div>
+
+      <dialog id="dialog">
+        <div id="message"></div>
+        <button id="reset-button">Restart Game</button>
+      </dialog>
+
+      <div class="rules">
+        <p>
+          Welcome to New Caledonia, a beautiful French archipelago in the South
+          Pacific Ocean! Its inhabitants are called Caledonians and among them
+          live the Kanak, one of the first peoples, whose culture is based on
+          ancestral traditions such as the harvesting of the yam (tuber) which
+          gave rhythm to the life of the tribes. It mainly symbolizes man and
+          each stage of his culture still gives rise to customary ceremonies
+          (births, weddings, funerals…).
+        </p>
+        <br />
+        <p>
+          Dive into a Kanak tribe and help a farmer (◀️ ▶️ 🔼 🔽) to harvest as
+          many yams as possible for his tribe in less than 1 minute.
+        </p>
+        <br />
+        <p>
+          Beware of poisonous mushrooms during your harvest or you will kill our
+          farmer and ruin the crop!
+        </p>
+        <br />
+        <p>
+          <strong> Hint:</strong> if too many mushrooms block your path, press
+          keyQ (A) to cut them!
+        </p>
+      </div>
+    </section>
+  </body>
 </html>

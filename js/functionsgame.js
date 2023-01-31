@@ -22,7 +22,7 @@ let intervalId = null;
 
 // Start the game
 function startGame() {
-  rules.textContent = "";
+  rules.remove();
   dialogModal.close();
   score = 0;
   displayScore();
@@ -183,7 +183,7 @@ function displayScore() {
 
 // Create a timer (new learning)
 function displayTimer() {
-  const startMinutes = 0.5;
+  const startMinutes = 1;
   let time = startMinutes * 60;
 
   const timerElement = document.getElementById("timer");
