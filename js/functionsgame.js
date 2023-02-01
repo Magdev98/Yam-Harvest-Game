@@ -2,10 +2,12 @@
 const gridElement = document.getElementById("grid");
 const startButton = document.getElementById("start-button");
 const scoreElement = document.getElementById("score");
+const scoreBox = document.getElementById("score-box");
 const rules = document.querySelector(".rules");
 const dialogModal = document.getElementById("dialog");
 const endMessage = dialogModal.querySelector("#message");
 const restartButton = dialogModal.querySelector("button");
+const timerElement = document.getElementById("timer")
 
 const columns = 10;
 const rows = 10;
@@ -23,6 +25,10 @@ let intervalId = null;
 // Start the game
 function startGame() {
   rules.remove();
+  displayTimer();
+  timerElement.style.display = "block"; // new learning
+  startButton.style.display = "none";
+  scoreBox.style.display = "block"; 
   dialogModal.close();
   score = 0;
   displayScore();
@@ -32,7 +38,6 @@ function startGame() {
   initFarmer(currentPosition);
   createMushroom(5);
   createYam(1);
-  displayTimer();
 }
 
 // Create the grid
@@ -186,8 +191,6 @@ function displayTimer() {
   const startMinutes = 1;
   let time = startMinutes * 60;
 
-  const timerElement = document.getElementById("timer");
-
   intervalId = setInterval(() => {
     let minutes = parseInt(time / 60, 10);
     let seconds = parseInt(time % 60, 10);
@@ -199,19 +202,28 @@ function displayTimer() {
 
     timerElement.textContent = `${minutes}:${seconds}`;
     time = time <= 0 ? 0 : time - 1;
-    if(time <= 0) { // first condition to end the game and win it
-      endGame(messagesEndGame[0])
+    if (time <= 0) {
+      // first condition to end the game and win it
+      endGame(
+        messagesEndGame[0] +
+          "\nScore:" +
+          " " +
+          scoreElement.textContent +
+          " " +
+          "🍠"
+      );
     }
   }, 1000);
 }
 
-function endGame(message) { // function to end game with message game over and restart everything with clearInterval
-  clearInterval(intervalId)
-  endMessage.textContent = message
-  setTimeout(() => dialogModal.showModal(), 500)
+function endGame(message) {
+  // function to end game with message game over and restart everything with clearInterval
+  clearInterval(intervalId);
+  endMessage.textContent = message;
+  setTimeout(() => dialogModal.showModal(), 500);
 }
-
-// function displayAudio() {} = next step
 
 startButton.addEventListener("click", startGame);
 restartButton.addEventListener("click", startGame);
+
+// function displayAudio() {} = next step
