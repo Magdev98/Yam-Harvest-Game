@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(./img/background-farm-game.png);
+  background-image: url(../img/background-farm-game.png); /* it needs ".." to reach the root folder and load the images */
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
@@ -147,7 +147,7 @@ img {
 }
 
 .yam {
-  background-image: url(./img/yam@2x.png);
+  background-image: url(../img/yam@2x.png);
   background-repeat: no-repeat;
   background-color: #95cd41;
   background-size: 80%;
@@ -155,7 +155,7 @@ img {
 }
 
 .farmer {
-  background-image: url(./img/agriculteur.png);
+  background-image: url(../img/agriculteur.png);
   background-repeat: no-repeat;
   background-color: #f0bb62;
   background-size: 90%;
