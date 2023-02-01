@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(../img/background-farm-game.png); /* it needs ".." to reach the root folder and load the images */
+  background-image: url(../img/background-farm-game.png); /* it needs ".." to load images because css file is far from 2 steps from img folder */
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
