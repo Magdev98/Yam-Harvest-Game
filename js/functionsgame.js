@@ -23,13 +23,14 @@ const messagesEndGame = [
 let intervalId = null;
 const audioElement = new Audio("./sounds/tropical-summer-best.mp3");
 const audioGameOver = new Audio("./sounds/cartoon-game-over.mp3");
-const audioWin = new Audio("./sounds/win-game.mp3"); 
+const audioWin = new Audio("./sounds/win-game.mp3");
 
 // Start the game
 function startGame() {
   audioElement.play();
   rules.remove();
   displayTimer();
+  timerElement.textContent = "00:00"; // FIx timer with HTML & JS to restart at 00:00 
   timerElement.style.display = "block"; // New learning: "element.style.display ="block" - show the element when game starts
   startButton.style.display = "none"; // New learning: "element.style.display ="none" - hide the element when game starts
   scoreBox.style.display = "block";
@@ -156,7 +157,8 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-window.addEventListener("keyup", (event) => {   // New learning: set key up
+window.addEventListener("keyup", (event) => {
+  // New learning: set key up
   switch (event.code) {
     case "KeyQ":
       isKeyQPressed = false;
@@ -196,7 +198,7 @@ function displayScore() {
 
 // Create a timer (new learning)
 function displayTimer() {
-  const startMinutes = 1;
+  const startMinutes = 0.1;
   let time = startMinutes * 60;
 
   intervalId = setInterval(() => {
@@ -219,7 +221,7 @@ function displayTimer() {
           scoreElement.textContent +
           " " +
           "🍠",
-          time // Add the argument "time" in the method to be able to call and play the win audio from the endGame method.
+        time // Add the argument "time" in the method to be able to call and play the win audio from the endGame method.
       );
     }
   }, 1000);
@@ -229,13 +231,15 @@ function endGame(message, time) {
   // Function to end game with message game over and restart everything with clearInterval.
   clearInterval(intervalId);
   endMessage.textContent = message;
+
   setTimeout(() => dialogModal.showModal(), 500);
   audioElement.pause();
   audioElement.currentTime = 0;
-  if(time === 0) { // Condition to play the win or loose audio when time is over and depending if farmer hits or not a mushroom.
-    audioWin.play(); 
+  if (time === 0) {
+    // Condition to play the win or loose audio when time is over and depending if farmer hits or not a mushroom.
+    audioWin.play();
   } else {
-    audioGameOver.play(); 
+    audioGameOver.play();
   }
 }
 
