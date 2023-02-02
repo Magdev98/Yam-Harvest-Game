@@ -198,7 +198,7 @@ function displayScore() {
 
 // Create a timer (new learning)
 function displayTimer() {
-  const startMinutes = 0.1;
+  const startMinutes = 1;
   let time = startMinutes * 60;
 
   intervalId = setInterval(() => {
