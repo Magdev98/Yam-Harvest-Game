@@ -21,9 +21,9 @@ const messagesEndGame = [
   "You lost! You've ruined a whole year's harvest, you moron!",
 ];
 let intervalId = null;
-const audioElement = new Audio("tropical-summer-best.mp3");
-const audioGameOver = new Audio("cartoon-game-over.mp3");
-const audioWin = new Audio("win-game.mp3"); 
+const audioElement = new Audio("./sounds/tropical-summer-best.mp3");
+const audioGameOver = new Audio("./sounds/cartoon-game-over.mp3");
+const audioWin = new Audio("./sounds/win-game.mp3"); 
 
 // Start the game
 function startGame() {
