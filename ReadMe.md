@@ -1,4 +1,4 @@
-# The Yam Harvest Game made by Marianne Agulhon (Ironhack PAR WEBDEV 2023 - Project 1)
+# The Yam Harvest Game made by Marianne Agulhon (Ironhack paris webdev 23 - Project 1)
 
 ## Why do I choose this game?
 
