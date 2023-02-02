@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(../img/background-farm-game.png); /* it needs ".." to load images because css file is far from 2 steps from img folder */
+  background-image: url(../img/background-farm-game.png); /* It needs ".." to load images because css file is far from 2 steps from img folder */
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
@@ -66,7 +66,7 @@ img {
   align-items: center;
 }
 
-/* new learning: hide the score at the beginning */
+/* New learning: hide the score at the beginning */
 #score-box {
   display: none;
 }
@@ -87,7 +87,7 @@ img {
   text-align: center;
 }
 
-/* new learning: display flex 2 elements: score and timer */
+/* Display my 2 elements: score and timer */
 .align-score-timer {
   display: flex;
   flex-direction: row;
@@ -124,14 +124,18 @@ img {
   display: grid;
   align-self: center;
   width: 600px;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr); /* Use repeat() notation instead of writing 1fr 10 times */
   grid-template-rows: repeat(10, 1fr);
   border-radius: 1rem;
   margin-right: 2rem;
 }
+/* Create flexible grid tracks with "fr unit" which represents a fraction of the available space in the grid container.
+1fr is for 1 part of the available space.
+Using fr we can make our rows and columns behave like flex items.
+*/
 
 .cell {
-  aspect-ratio: 1;
+  aspect-ratio: 1; /* Sets a preferred aspect ratio for the box, which will be used in the calculation of auto sizes and some other layout functions */
   background-color: #f0bb62;
   background-size: 100%;
   background-position: center;
@@ -196,7 +200,7 @@ dialog::backdrop {
   transition: background-color 0.2s;
 }
 
-/* new learning: change color or text when you hover over an element with the mouse */
+/* New learning: change color or text when you hover over an element with the mouse */
 .game-button:hover {
   background-color: #5bb318;
 }
@@ -206,13 +210,12 @@ dialog::backdrop {
   color: white;
 }
 
-/* new learning: 
-remove blue border around my reset button
-pseudo selector for btn and links only suppression focus
+/* New learning: ":focus {} pseudo selector"
+remove the blue border around my reset button by deleting the automatic focus.
 The :focus CSS pseudo-class represents an element (such as a form input) that has received focus. 
 It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key.
 */
-:focus,
+:focus, 
 :focus-visible {
   outline: none;
 }
