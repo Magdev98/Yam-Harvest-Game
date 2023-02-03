@@ -30,7 +30,7 @@ function startGame() {
   audioElement.play();
   rules.remove();
   displayTimer();
-  timerElement.textContent = "00:00"; // FIx timer with HTML & JS to restart at 00:00 
+  timerElement.textContent = "00:00"; // Fix timer with HTML & JS to restart at 00:00 
   timerElement.style.display = "block"; // New learning: "element.style.display ="block" - show the element when game starts
   startButton.style.display = "none"; // New learning: "element.style.display ="none" - hide the element when game starts
   scoreBox.style.display = "block";

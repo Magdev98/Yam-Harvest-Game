@@ -17,9 +17,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
-
 
 h1,
 h2 {
@@ -31,7 +30,7 @@ h2 {
 h1 {
   font-size: 5rem;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 h2 {
@@ -50,9 +49,9 @@ img {
 #game {
   backdrop-filter: opacity(100%);
   display: flex;
-  justify-content: space-between;
-  margin: 0.5rem;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around; /* better than space-between to adapt the content to =/= screen */
+  padding-top: 2rem;
 }
 
 #left-article {
@@ -60,13 +59,13 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 2rem;
+  padding: 2rem;
 }
 
 #right-article {
   max-width: 50%;
-  justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 
 /* New learning: hide the score at the beginning */
@@ -95,8 +94,6 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 2em;
 }
 
 .rules {
@@ -122,12 +119,15 @@ img {
   padding: 0;
 }
 
-
 #grid {
+  max-width: 100%;
   display: grid;
   align-self: center;
   width: 600px;
-  grid-template-columns: repeat(10, 1fr); /* Use repeat() notation instead of writing 1fr 10 times */
+  grid-template-columns: repeat(
+    10,
+    1fr
+  ); /* Use repeat() notation instead of writing 1fr 10 times */
   grid-template-rows: repeat(10, 1fr);
   border-radius: 1rem;
   margin-right: 2rem;
@@ -218,7 +218,48 @@ remove the blue border around my reset button by deleting the automatic focus.
 The :focus CSS pseudo-class represents an element (such as a form input) that has received focus. 
 It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key.
 */
-:focus, 
+:focus,
 :focus-visible {
   outline: none;
+}
+
+@media (width < 1200px) {
+  /* responsive */
+  * {
+    overflow: visible;
+  }
+
+  #game {
+    flex-direction: column;
+  }
+
+  #left-article,
+  #right-article {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  #grid {
+    max-width: 100%;
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 5rem;
+}
+
+#start-button {
+  margin: 1rem 0 0 1rem;
+}
+
+.rules {
+  padding: 0 1rem 1rem;
+  margin: 1rem;
+}
+
+.align-score-timer {
+  flex-direction: column;
+  align-items: center;
+  gap: 0em;
 }
